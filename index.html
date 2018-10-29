@@ -1,0 +1,245 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <style type="text/css">
+        table audio {
+            width: 185px;
+        }
+    </style>
+
+    <title>Demo</title>
+</head>
+
+
+<body>
+<div class="jumbotron text-center">
+    <h1>Multi-Domain Processing via Hybrid Denoising (MDPhD) Networks for Speech Enhancement</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <h2>Evaluation Results</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>CSIG</th>
+                    <th>CBAK</th>
+                    <th>COVL</th>
+                    <th>PESQ</th>
+                    <th>SSNR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Wiener <a href="#ref1"><sup>1</sup></a></th>
+                    <td>3.23</td>
+                    <td>2.68</td>
+                    <td>2.67</td>
+                    <td>2.22</td>
+                    <td>5.07</td>
+                </tr>
+                <tr>
+                    <th scope="row">SEGAN <a href="#ref2"><sup>2</sup></a></th>
+                    <td>3.48</td>
+                    <td>2.94</td>
+                    <td>2.80</td>
+                    <td>2.16</td>
+                    <td>7.73</td>
+                </tr>
+                <tr>
+                    <th scope="row">Wavenet <a href="#ref3"><sup>3</sup></a></th>
+                    <td>3.62</td>
+                    <td>3.23</td>
+                    <td>2.98</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <th scope="row">MMSE-GAN <a href="#ref4"><sup>4</sup></a></th>
+                    <td>3.80</td>
+                    <td>3.12</td>
+                    <td>3.14</td>
+                    <td>2.53</td>
+                    <td>-</td>
+                </tr>
+                <tr class="table-active">
+                    <th scope="row">MDPhD (ours)</th>
+                    <td>3.85</td>
+                    <td>3.39</td>
+                    <td>3.27</td>
+                    <td>2.70</td>
+                    <td>10.22</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Our paper can be found in <a href="https://openreview.net/forum?id=B1xOLgWijQ">https://openreview.net/forum?id=B1xOLgWijQ</a></p>
+    </div>
+
+    <hr>
+    <div class="row">
+        <h2>Audio Samples</h2>
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Sample 1</th>
+                    <th>Sample 2</th>
+                    <th>Sample 3</th>
+                    <th>Sample 4</th>
+                    <th>Sample 5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Noisy input</th>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_036-noisy.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_170-noisy.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_415-noisy.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p257_070-noisy.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p257_395-noisy.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">SEGAN</th>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_036-segan.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_170-segan.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_415-segan.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p257_070-segan.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p257_395-segan.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Wavenet</th>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_036-wvnet.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_170-wvnet.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_415-wvnet.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p257_070-wvnet.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p257_395-wvnet.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Ours</th>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_036-ours.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_170-ours.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p232_415-ours.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p257_070-ours.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="assets/p257_395-ours.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <h2>References</h2>
+    </div>
+    <div class="row">
+        <ol>
+            <li id="ref1">Pascal Scalart and Jozue Vieira Filho. Speech enhancement based on a priori signal to noise estimation. In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 1996</li>
+            <li id="ref2">Santiago Pascual, Antonio Bonafonte, and Joan Serra. SEGAN: Speech enhancement generative adversarial network. In Interspeech, 2017.</li>
+            <li id="ref3">Dario Rethage, Jordi Pons, and Xavier Serra. A Wavenet for speech denoising. In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2018.</li>
+            <li id="ref4">Meet H Soni, Neil Shah, and Hemant A Patil. Time-frequency masking-based speech enhancement using generative adversarial network. In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2018.</li>
+        </ol>
+    </div>
+</body>
